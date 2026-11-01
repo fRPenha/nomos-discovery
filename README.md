@@ -4,15 +4,10 @@ Nomos é uma metodologia de descoberta de necessidades, acompanhada de uma skill
 
 Uma ideia inicial pode chegar como uma solução pronta — um relatório, uma automação ou um sistema — sem que o problema e o resultado desejado estejam claros. O Nomos conduz uma conversa para investigar a situação, separar fatos de hipóteses, identificar pessoas e contextos afetados, avaliar alternativas e validar uma síntese com quem fez a solicitação.
 
-A descoberta pode indicar que a melhor próxima ação é um experimento, uma mudança de processo, a utilização de algo que já existe ou a construção de software. Quando software se justifica e há clareza suficiente, o resultado pode servir de entrada para uma etapa posterior de especificação, inclusive com ferramentas de SDD como o GitHub Spec Kit. O Nomos não substitui essa etapa e não implementa a solução.
+A descoberta pode indicar que a melhor próxima ação é um experimento, uma mudança de processo, a utilização de algo que já existe ou a construção de software. Quando software se justifica e há clareza suficiente, o Nomos prepara um contrato de discovery para uma etapa posterior de especificação com o GitHub Spec Kit. O Nomos não cria a especificação técnica nem implementa a solução.
 
-## O que existe neste repositório
+## Skill
 
-- [`skills/nomos/SKILL.md`](skills/nomos/SKILL.md): versão existente da skill de descoberta.
-- [`skills/nomos/references/contrato.md`](skills/nomos/references/contrato.md): modelo de contrato de discovery usado por essa versão.
+A versão original construída no projeto Nomos está em [`skills/nomos/SKILL.md`](skills/nomos/SKILL.md). Ela descreve a metodologia, a entrevista, o teste de necessidade, o contrato de saída e o encaminhamento para o Spec Kit.
 
-## Estado atual
-
-Esta é a publicação inicial da skill na forma em que foi construída. Ela foi criada para um ambiente específico e ainda contém referências ao `hub-central`, a comandos, sistemas e fluxos desse ambiente. Essas dependências não acompanham este repositório; portanto, a skill **ainda não é uma instalação independente pronta para uso geral**. Sua adaptação e evolução são trabalhos futuros.
-
-O conteúdo está disponível para conhecer a intenção, os princípios e o fluxo atual do Nomos. As instruções específicas de registro e integração devem ser avaliadas e adaptadas ao contexto de cada pessoa antes do uso.
+Esta publicação disponibiliza o material existente para leitura e avaliação. Sua compatibilidade prática com diferentes agentes e ambientes ainda precisa ser validada.
