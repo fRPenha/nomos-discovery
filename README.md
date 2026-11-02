@@ -6,6 +6,26 @@ Uma demanda pode chegar como uma ideia vaga ou como uma solução aparentemente 
 
 A intenção não precisa nascer pronta. Ela pode ser descoberta e construída ao longo da conversa. O Nomos ajuda a organizar esse entendimento sem decidir pela pessoa, presumir que software é necessário ou conduzi-la para uma solução.
 
+## Origem e justificativa do nome Nomos
+
+O nome Nomos tem origem no grego antigo νόμος (nómos), termo associado a lei, norma, costume, ordem e princípios que organizam uma determinada realidade.
+
+A escolha está relacionada à proposta central da metodologia: estabelecer clareza e estrutura para uma intenção antes que ela seja transformada em especificações e implementação.
+
+O Nomos não pretende determinar o que deve ser construído. Sua função é organizar o processo de descoberta para que a intenção do solicitante seja compreendida, esclarecida e registrada sem que o agente imponha suas próprias decisões.
+
+Durante a concepção da metodologia, foram explorados nomes inspirados no grego e no latim, buscando uma identidade que reunisse três características:
+
+- **Significado conceitual:** representar uma metodologia fundamentada em princípios, e não apenas uma ferramenta de desenvolvimento.
+- **Identidade própria:** possuir um nome curto, reconhecível e capaz de funcionar independentemente do GitHub Spec Kit.
+- **Amplitude de aplicação:** não limitar a metodologia ao desenvolvimento de software, já que o Discovery pode revelar necessidades que não exigem uma solução tecnológica.
+
+Entre as alternativas discutidas estavam Clarus, associado à clareza, e possibilidades derivadas do latim intentio, relacionadas à intenção. Embora Clarus tenha sido considerado interessante, nenhuma alternativa demonstrou superioridade suficiente para substituir Nomos.
+
+É importante registrar que, no histórico disponível, Nomos permaneceu como nome de trabalho adotado, mas a discussão sobre a identidade definitiva não foi formalmente encerrada.
+
+A relação entre o nome e a metodologia é conceitual, não uma tradução literal: nómos não significa descoberta ou intenção. O termo representa a ideia de princípios e estrutura que orientam o processo de descoberta.
+
 ## Princípios
 
 - **Neutralidade durante a descoberta:** o agente facilita a reflexão sem impor, aprovar ou desestimular uma solução.
