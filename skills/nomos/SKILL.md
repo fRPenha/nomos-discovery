@@ -1,23 +1,23 @@
 ---
 name: discovering-intent-with-nomos
-description: Use when a problem, opportunity, desired outcome, or vague idea must be understood and validated before deciding whether software is justified or before preparing work for an agent using GitHub Spec Kit.
+description: Use when a problem, opportunity, desired outcome, or vague idea needs discovery and validation before choosing next steps or preparing information for people or other agents.
 ---
 
 # Descobrindo intenção com Nomos
 
 ## Propósito
 
-Conduza o Discovery antes da especificação. Descubra o que precisa mudar, para quem, em qual contexto e qual resultado mínimo teria valor. Não projete funcionalidades, interface, arquitetura ou tarefas, mesmo depois de esclarecer a intenção; essa transformação pertence ao Spec Kit.
+Conduza o Discovery antes da especificação. Descubra o que precisa mudar, para quem, em qual contexto e qual resultado mínimo teria valor. Não projete funcionalidades, interface, arquitetura ou tarefas, mesmo depois de esclarecer a intenção; essa transformação pertence a uma etapa posterior.
 
-Quando a necessidade justificar software, produza `nomos-discovery.md`: um contrato validado de entrada para outro agente executar o GitHub Spec Kit. O Nomos não cria `spec.md`, `plan.md`, `tasks.md` nem implementa.
+Após a síntese validada, a pessoa pode escolher uma, várias ou todas as saídas descritas abaixo, inclusive uma entrada para o GitHub Spec Kit quando aplicável. O Nomos não cria `spec.md`, `plan.md`, `tasks.md` nem implementa.
 
 ## Papéis e fronteiras
 
 1. **Agente Nomos:** entrevista, questiona, sintetiza, valida e produz o contrato de Discovery.
-2. **Agente Spec Kit:** transforma o contrato em especificação, esclarecimentos, plano técnico e tarefas.
+2. **Responsável pela próxima etapa:** usa a saída escolhida; se for o Spec Kit, transforma o contrato em especificação, esclarecimentos, plano técnico e tarefas.
 3. **Agente de desenvolvimento:** implementa e verifica os artefatos aprovados.
 
-Não antecipe o trabalho dos papéis seguintes. “Preparado para o Spec Kit” significa evidência de intenção suficiente e rastreável, não requisitos normalizados ou uma especificação técnica disfarçada. Use execuções ou contextos separados para cada papel quando a plataforma permitir; o modelo pode ser o mesmo, mas responsabilidade, entrada e saída devem permanecer segregadas.
+Não antecipe o trabalho dos papéis seguintes. Uma síntese validada pode servir a vários destinos; “preparado para o Spec Kit” exige adicionalmente os critérios específicos abaixo e não significa requisitos normalizados ou uma especificação técnica disfarçada. Use execuções ou contextos separados para cada papel quando a plataforma permitir; o modelo pode ser o mesmo, mas responsabilidade, entrada e saída devem permanecer segregadas.
 
 ## Regra de contexto pessoal
 
@@ -58,7 +58,7 @@ Use internamente estes estados:
 3. `teste_de_necessidade`: verificar se construir algo é necessário e comparar alternativas.
 4. `sintese`: organizar declarações, inferências, desconhecidos e conflitos.
 5. `validacao`: obter correções e aprovação explícita do solicitante.
-6. `handoff`: gerar o contrato somente quando o destino estiver definido.
+6. `handoff`: após a síntese validada, perguntar os destinos e gerar somente as saídas escolhidas.
 
 Não avance porque um número de perguntas foi atingido. Avance quando houver evidência suficiente para o próximo estado.
 
@@ -175,9 +175,24 @@ O Discovery está `ready_for_specification` somente se:
 
 Questões não bloqueadoras podem seguir registradas para `/speckit.clarify`.
 
-## Contrato de saída
+## Escolha de saídas após a validação
 
-Gere um único arquivo Markdown chamado `nomos-discovery.md`. Mantenha as seções mesmo quando algo for desconhecido; use `[DESCONHECIDO]` em vez de omitir ou completar. Cada item relevante deve indicar estado e evidência, mesmo quando o modelo abaixo não fornecer uma coluna dedicada.
+Não peça a escolha nem gere saídas finais antes da aprovação explícita da síntese e da classificação. Esclareça lacunas ou contradições que impeçam a validação; registre dúvidas não bloqueadoras como desconhecidas. Sem aprovação, mantenha o trabalho pendente e não apresente um relatório final como validado.
+
+Após a validação, pergunte o que a pessoa precisa e permita selecionar uma, várias ou todas as opções, ou informar outro destino:
+
+- **Relatório para a pessoa:** síntese legível, decisões, incertezas e fontes relevantes.
+- **Relatório para PO ou equipe de negócio:** síntese e contexto para análise, com rastreabilidade; ofereça síntese, descoberta detalhada ou conversa original. Antes de incluir falas originais, peça autorização específica e informe o destino; minimize dados pessoais e exclua segredos. Compartilhar ou enviar externamente exige autorização para o destinatário e conteúdo.
+- **Contexto para outra LLM ou agente:** briefing autônomo com intenção, contexto, restrições, estados, fontes e dúvidas, sem inventar decisões.
+- **Entrada para Spec Kit:** use o contrato e o handoff abaixo somente quando a pessoa escolher esse destino e os critérios de prontidão para especificação estiverem satisfeitos.
+- **Pesquisa ou sugestões de próximos passos:** somente quando solicitadas, depois da validação; assinale explicitamente a mudança de papel, identifique fontes e separe sugestões e inferências das declarações e decisões validadas. A mesma LLM ou outra pode executar essa etapa, respeitando permissões aplicáveis.
+- **Avaliação opcional da sessão:** somente se a pessoa solicitar. Registre separadamente suas percepções e a análise limitada da LLM sobre neutralidade, fidelidade, clareza, eventuais suposições, ritmo e oportunidades de melhoria. Não trate autoavaliação como prova; indique incertezas. Por padrão use síntese mínima sem dados pessoais; pergunte antes de incluir trechos originais ou compartilhar o material, especificando destinatário e conteúdo. Não envie nada automaticamente.
+
+Para cada destino, adapte o formato sem alterar o significado da síntese validada. Uma saída pode ser apresentada na conversa; crie arquivos apenas quando solicitado ou autorizado. Quando for útil registrar um documento base, use Markdown legível e o nome `nomos-discovery.md` se a pessoa não indicar outro. Reproduza só informações necessárias ao destino, com evidência e estado; não transforme lacunas em fatos. O registro base pode ser adaptado a ações não tecnológicas sem handoff para especificação. Nenhum destino é obrigatório.
+
+## Contrato de saída para Spec Kit
+
+Quando solicitado e elegível, use o modelo abaixo para um arquivo Markdown chamado `nomos-discovery.md`. Mantenha as seções mesmo quando algo for desconhecido; use `[DESCONHECIDO]` em vez de omitir ou completar. Cada item relevante deve indicar estado e evidência, mesmo quando o modelo abaixo não fornecer uma coluna dedicada.
 
 ```markdown
 ---
@@ -364,9 +379,9 @@ Não execute `speckit.implement` no papel de especificação.
 
 ## Saídas que não seguem ao Spec Kit
 
-Para `experimento_antes_do_software` ou `acao_nao_tecnologica`, use o mesmo documento até a seção 18, defina `status: not_for_spec_kit`, substitua a seção 19 por `Próxima ação a validar`. Apresente alternativas e trade-offs; não desenhe unilateralmente um experimento, processo ou serviço. Registre a decisão aprovada e não fabrique um handoff de software.
+Para `experimento_antes_do_software` ou `acao_nao_tecnologica`, quando a pessoa solicitar documento, adapte o conteúdo pertinente do modelo até a seção 18, registre `status: not_for_spec_kit` e use `Próxima ação validada` no lugar do handoff. Apresente alternativas somente quando solicitadas ou autorizadas; não desenhe unilateralmente um experimento, processo ou serviço. Registre a decisão aprovada e não fabrique um handoff de software.
 
-Para `insuficiente`, use `status: blocked`, liste as perguntas bloqueadoras e retome a entrevista quando houver respostas. Inclua uma instrução explícita para qualquer agente downstream recusar o documento.
+Para `insuficiente`, registre `status: blocked` e as perguntas bloqueadoras; retome a entrevista quando houver respostas. Sem síntese aprovada, não gere saídas finais; se um registro de trabalho for solicitado, marque-o como rascunho bloqueado e instrua qualquer agente downstream a recusar seu uso como descoberta validada.
 
 ## Proibições
 
