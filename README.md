@@ -23,6 +23,30 @@ A validação confirma que a síntese representa fielmente o entendimento alcan�
 3. **Escolher saídas:** depois de a síntese estar fechada e validada, a pessoa escolhe uma, várias ou todas as saídas disponíveis.
 4. **Preparar as saídas:** o conteúdo é adaptado ao destinatário, preservando a síntese validada e distinguindo fatos de interpretações.
 
+### Diagrama do fluxo pretendido
+
+O diagrama ilustra a evolução em discussão; a skill publicada ainda não implementa todas as saídas.
+
+```mermaid
+flowchart TD
+    A["Pessoa apresenta uma ideia,<br/>problema ou necessidade"] --> B["Nomos conduz a descoberta<br/>com neutralidade"]
+    B --> C["Organiza a síntese:<br/>intenção, contexto, evidências e dúvidas"]
+    C --> D{"A síntese está completa<br/>para validação?"}
+    D -- "Não" --> E["Aprofundar ou registrar<br/>pendências e bloqueios"]
+    E -- "Retomar" --> B
+    D -- "Sim" --> F["Pessoa revisa a síntese"]
+    F --> G{"Pessoa valida<br/>o entendimento?"}
+    G -- "Corrigir ou complementar" --> B
+    G -- "Sim" --> H["Pessoa escolhe uma, várias<br/>ou todas as saídas"]
+    H --> I["Relatório para<br/>a própria pessoa"]
+    H --> J["Relatório para PO<br/>ou equipe de negócio"]
+    H --> K["Entrada para<br/>o Spec Kit"]
+    H --> L["Contexto para outra<br/>LLM ou agente"]
+    H --> M["Pesquisa ou sugestões<br/>de próximos passos"]
+    J --> N["Escolha da profundidade:<br/>síntese, descoberta detalhada ou<br/>conversa original autorizada"]
+    M --> O["Etapa posterior solicitada:<br/>sugestões separadas<br/>do que foi validado"]
+```
+
 ## Saídas em estudo
 
 A direção proposta é usar uma síntese de descoberta em Markdown, legível por pessoas e por outras LLMs, como base para diferentes destinos:
